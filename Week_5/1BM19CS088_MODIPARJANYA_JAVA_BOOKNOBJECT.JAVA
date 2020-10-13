@@ -1,51 +1,58 @@
+import java.util.Scanner;
 
-import java.util.*;
-import java.lang.*;
 class Book
 {
     String name;
-    String auth;
-    double pric;
-    int pagn;
-    public void getdetails()
+    String author;
+    String price;
+    String num_pages;
+    public Book()
     {
-        Scanner x=new Scanner(System.in);
-        System.out.println("Enter Book Details");
-        System.out.println("Enter Book Name:");
-        name=x.next();
-        System.out.println("Enter the Author");
-        auth=x.next();
-        System.out.println("Enter the Price of the book");
-        pric=x.nextDouble();
-        System.out.println("Enter the number of pages in the book");
-        pagn=x.nextInt();
+        name="abc";
+        author="xyz";
+        price="100rs";
+        num_pages="500";
     }
-    
-    public String toString()
+    void getData()
     {
-        return("**BOOK DETAILS**"+"\nThe name of the book : "+name+"\nThe author of the book :"+auth+"\nThe price of the book: "+pric+"\nNumber of pages in book :"+pagn);
+        Scanner s1=new Scanner(System.in);
+        System.out.println("Enter Book name:");
+        name=s1.next();
+        System.out.println("Enter Author name:");
+        author=s1.next();
+        System.out.println("Enter Book price:");
+        price=s1.next();
+        System.out.println("Enter number of pages:");
+        num_pages=s1.next();
+    } 
+    public String toString(){
+    return("Book: "+name+"\nAuthor: "+author+"\nPrice: "+price+"\nNumber of pages:"+num_pages);
     }
 
 }
-class Main{
+public class BookMain
+{
     public static void main(String args[])
-    {
+    {      
         int i,n;
-        Scanner x=new Scanner(System.in);
-        System.out.println("Enter the number of books");
-        n=x.nextInt();
-        Book b[]=new Book[n];
-        for (i=0;i<n;i++)
-        {
-            b[i]=new Book();
-            b[i].getdetails();
-    
+        Book tempobj=new Book();
+        System.out.println("Constructor values:");
+        System.out.println(tempobj.toString());
+        System.out.println("Enter number of books:");
+        Scanner s=new Scanner(System.in);
+        n=s.nextInt();
+        Book [] ob=new Book[n];
+        for(i=0;i<n;i++)
+        {          
+            ob[i]=new Book();
+            ob[i].getData();
+            System.out.println("----");
         }
+        System.out.println("Details of all books:");
         for(i=0;i<n;i++)
         {
-            System.out.println(b[i]);
+            System.out.println("Book : "+(i+1)); 
+            System.out.println(ob[i].toString());
         }
-        
-
     }
 }
