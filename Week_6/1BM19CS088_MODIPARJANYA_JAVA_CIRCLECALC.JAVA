@@ -11,7 +11,7 @@ class ClassDemo
        System.out.println("\n\n\n--------- THE DETAILS ARE AS FOLLOWS ---------");
        System.out.println("\nThe radius of circle is: " + rad);
        System.out.println("\nArea of Circle is: " + a); 
-       System.out.println("\nArea of Circle is: " + p);      
+       System.out.println("\nCircumference of Circle is: " + p);      
     }
     static double area(double r)
     {
