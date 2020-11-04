@@ -1,4 +1,4 @@
-[12:47 PM, 11/4/2020] Jahnavi Shanbhag: #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #define q_size 5
 int r=-1,f=0,item,count=0;
